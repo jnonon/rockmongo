@@ -140,7 +140,7 @@ class ServerController extends BaseController {
 }');
 		}
 		if ($this->isPost()) {
-			$code = trim(xn("code"));
+			$code = str_replace("\n", '', trim(xn("code")));
 			$arguments = xn("argument");
 			if (!is_array($arguments)) {
 				$arguments = array();
